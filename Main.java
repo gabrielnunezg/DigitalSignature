@@ -29,11 +29,11 @@ public class Main {
             System.out.println("Sender's Side");
             RSA.keyPairGenerate();
             String senderHash = MD5.hashString(senderText);
-            System.out.println("Sender Signature Hash : "+senderHash);
+            System.out.println("Sender Signature MD5 Hash : "+senderHash);
             
             byte[] senderHashArray = RSA.RSAencrypt(senderHash);
             String senderHashEncrypted = Base64.getEncoder().encodeToString(senderHashArray);
-            System.out.println("Encrypted Hash for Receiver : " + senderHashEncrypted);
+            System.out.println("RSA Encrypted Hash for Receiver : " + senderHashEncrypted);
             System.out.println("-----------------------------------------------");
             
             // Receiver's Side
